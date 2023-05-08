@@ -54,8 +54,8 @@ class API:
         if response:
             response = response.json()
             timestamp = datetime.now()
-            with open(f'{timestamp}.json', 'w') as fp:
+            with open(f'responses/{timestamp}.json', 'w') as fp:
                 json.dump(response, fp)
             print(f'The request is successfully handled and the response is written to {timestamp}.json\n')
         else:
-            print('The response seems empty, did you provide valid parameters?')
+            print('The response seems empty, did you provide valid parameters?\n')
