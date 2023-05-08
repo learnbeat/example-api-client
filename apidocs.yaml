@@ -1,0 +1,214 @@
+openapi: 3.0.3
+info:
+  title: Learnbeat - Open API documentation
+  description: |-
+      This documentation aims to provide all information required for working with the open API from Learnbeat. Please make sure that you have the correct host and token values for communicating with the API.
+  contact:
+    email: timon@dedact.nl
+  version: 1.0.0
+paths:
+  /traininglists:
+    get:
+      tags:
+        - Training lists
+      summary: Get word lists
+      description: Get all word lists for the current user
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 7544
+                        name:
+                          type: string
+                          example: The very first Woords activity by Ramon Hofmeister
+                        type:
+                          type: string
+                          example: null
+                        image:
+                          type: string
+                          example: ""
+                        user_id:
+                          type: integer
+                          example: 48272
+                        share_level:
+                          type: integer
+                          example: 1
+                        level_id:
+                          type: integer
+                          example: null
+                        grade_id:
+                          type: integer
+                          example: null
+                        left_column_name:
+                          type: string
+                          example: Begrip
+                        right_column_name:
+                          type: string
+                          example: Betekenis
+                        created_at:
+                          type: string
+                          example: 2020-01-29T17:26:03.000000Z
+                        updated_at:
+                          type: string
+                          example: null
+                        is_deleted:
+                          type: integer
+                          example: 0
+                        course_name:
+                          type: string
+                          example: Biologie
+                          
+  /traininglists/{list_id}/words:
+    get:
+      tags:
+        - Training lists
+      parameters:
+        - in: path
+          name: list_id
+          schema:
+            type: integer
+          required: true
+      summary: Get words for list id
+      description: Get all words from the provided word list id
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 63152
+                        left_value:
+                          type: string
+                          example: Adri
+                        right_value:
+                          type: string
+                          example: Van Baren
+                        training_list_id:
+                          type: integer
+                          example: 7544
+                        created_at:
+                          type: string
+                          example: 2020-01-29T17:26:17.000000Z
+                        updated_at:
+                          type: string
+                          example: null
+                        is_deleted:
+                          type: integer
+                          example: 0
+                          
+  /traininglists/{list_id}/sessions:
+    get:
+      tags:
+        - Training lists
+      parameters:
+        - in: path
+          name: list_id
+          schema:
+            type: integer
+          required: true
+      summary: Get sessions for list id
+      description: Get all sessions from the provided word list id
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 11772
+                        learn_direction:
+                          type: string
+                          example: left_right
+                        training_list_id:
+                          type: integer
+                          example: 7544
+                        created_at:
+                          type: string
+                          example: 2020-01-29T17:37:35.000000Z
+                        finished_at:
+                          type: string
+                          example: 2020-01-29 17:37:41
+                        type:
+                          type: string
+                          example: cards
+                        user_id:
+                          type: integer
+                          example: 48268
+                        time_last_response:
+                          type: string
+                          example: 2020-01-29 16:37:41
+                        activity_id:
+                          type: integer
+                          example: 11515726
+
+  /traininglists/{list_id}/sessions/{session_id}/responses:
+    get:
+      tags:
+        - Training lists
+      parameters:
+        - in: path
+          name: list_id
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: session_id
+          schema:
+            type: integer
+          required: true  
+      summary: Get responses for a list / session
+      description: Get all responses from a list id / session id combination
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 222257
+                        training_list_word_id:
+                          type: integer
+                          example: 63153
+                        response:
+                          type: string
+                          example: ""
+                        score:
+                          type: integer
+                          example: 1
+                        training_list_session_id:
+                          type: integer
+                          example: 11772
+                        amount_of_tries:
+                          type: integer
+                          example: 1
+                        created_at:
+                          type: string
+                          example: 2020-01-29T16:37:38.000000Z
