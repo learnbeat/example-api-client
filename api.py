@@ -23,10 +23,8 @@ class API:
         return "create object"
 
     def set_token(self):
-        if not self.token:
+        while not self.token:
             self.token = input("Please enter your API token: ")
-        if not self.token:
-            self.set_token()
 
     def get_routes(self):
         return self.routes
