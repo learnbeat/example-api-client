@@ -7,7 +7,7 @@ For more in-depth explanation on the API, please take a look at the provided API
 I would advise opening the .yaml file in an OpenAPI editor like [Swagger](https://editor.swagger.io).
 
 Make sure to set the following settings to get started:
-+ Set the `token` variable in `api.py` to one of the provided tokens
++ Set the `token` variable in `api.py` to the provided token
 + Set the `HOST` environment variable to the provided url
 + Have fun!
 
