@@ -163,7 +163,7 @@ paths:
                           type: integer
                           example: 11515726
 
-  /traininglists/{list_id}/sessions/{session_id}/responses:
+  /traininglists/{list_id}/session/{session_id}/responses:
     get:
       tags:
         - Training lists
