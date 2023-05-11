@@ -4,7 +4,7 @@ Each non-empty JSON response is automatically saved in the `/responses` folder w
 Feel free to edit the files and structure to your preferences. They are merely intended as a stepping stone.
 For example, automatically storing the response in a `Pandas` dataframe or a different file-format. 
 For more in-depth explanation on the API, please take a look at the provided API documentation. 
-WE would advise opening the .yaml file in an OpenAPI editor /viewer like [Swagger](https://editor.swagger.io).
+We would advise opening the .yaml file in an OpenAPI editor /viewer like [Swagger](https://editor.swagger.io).
 
 Make sure to set the following settings to get started:
 + Set the `token` variable in `api.py` to the provided token
